@@ -1,0 +1,23 @@
+<ion-view view-title="约·开学">
+  <ion-content>
+    <div ng-repeat="news in news">
+      <a href="#tab/semester/{{news.id}}">
+        <div class="list card">
+          <ion-item>
+            <h2>{{news.title}}</h2>
+            <p>{{news.source}}</p>
+          </ion-item>
+          <ion-item class="item item-image" type="item-text-wrap">
+            <img ng-src="{{news.face}}">
+
+          </ion-item>
+
+          </card>
+
+        </div>
+      </a>
+    </div>
+
+
+  </ion-content>
+</ion-view>
