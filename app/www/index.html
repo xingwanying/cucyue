@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <style type="text/css">
+.alert
+{
+filter:alpha(opacity=50);  
+-moz-opacity:1.0; 
+opacity: 0.5;
+}
+img
+{
+	width:100%;
+	htight:auto;
+	}
+</style>
+  
+	
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
+    <link href="css/lrtk.css" rel="stylesheet" type="text/css" />
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -14,7 +30,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+	<script src="http://code.jquery.com/jquery-1.4.1.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -22,8 +38,54 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    
+    <script type="text/javascript">
+function Element()
+{
+document.getElementById("form2").style.display="";
+}
+function removeElement()
+{
+document.getElementById("form2").style.display="none";
+}
+
+</script>
+
+
+
   </head>
   <body ng-app="starter">
+  
+  <form id="form1" name="form1" method="post" action="" style="text-align:left;margin:10px 10px;">
+
+<input style='color:white;border-radius:5px;position:relative;border:none;background-color:black' type="submit" name="Submit" value="" class="alert" />
+<section id="h1" class="jawbone-takeover-minimulti jawbone-hero"><i class="jawbone-hero-image" data-hero-image-fixed="true" data-hero-image-fade="true" data-hero-min-opacity=".3" style="opacity: 1.05;"></i></section>
+
+</form>
+
+<script language="javascript">
+document.form1.Submit.disabled = true;
+var speed = 1000; //速度
+var wait = 5; //停留时间
+function updateinfo(){
+  if(wait == 0){
+   document.getElementById('form1').style.display="none";
+    Element();
+        return;
+  }
+  else{
+    document.form1.Submit.value = "广告剩余"+wait+"秒";
+    wait--;
+    window.setTimeout("updateinfo()",speed);
+  }
+}
+
+updateinfo();
+removeElement();
+
+</script>
+ 
+ <div id="form2" name="form2" method="post" action="" style="display:none">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
@@ -37,5 +99,8 @@
       have templates inline in this html file if you'd like).
     -->
     <ion-nav-view></ion-nav-view>
+    
+   </div>
+  
   </body>
 </html>

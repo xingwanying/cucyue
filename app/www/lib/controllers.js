@@ -18,21 +18,9 @@ angular.module('starter.controllers', [])
   
 	  
 	$("#pic").click(function(){
-    
-	if($("#pic").attr("title") == "0")
-	{
-	$("#pic").html("<img class='icon' src='img/u33.png'>");
+    $("#pic").html("<img class='icon' src='img/u33.png'>");
 	$("#num").text(Number($("#num").text())+1);
 	$http.post("http://www.cucyue.com/new/php/setpraise.php");
-	$("#pic").attr("title","1");
-	}
-	else
-		{
-	$("#pic").html("<img class='icon' src='img/u29.png'>");
-	$("#num").text(Number($("#num").text())-1);
-	$http.post("http://www.cucyue.com/new/php/setpraise1.php");
-	$("#pic").attr("title","0");
-	}
   });
   })
 

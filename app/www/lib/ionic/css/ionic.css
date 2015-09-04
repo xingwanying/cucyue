@@ -5325,6 +5325,9 @@ a.item-content {
  * --------------------------------------------------
  * A card and list-inset are close to the same thing, except a card as a box shadow.
  */
+ .card:hover{
+	background-color:lightgray;
+}
 .card, .list-inset {
   overflow: hidden;
   margin: 20px 10px;
